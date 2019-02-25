@@ -28,7 +28,7 @@ export async function * readlines<T>(filepath: string): AsyncIterableIterator<T>
  * Read JSONL multiple lines at a time
  *
  * @param {string} filepath filepath
- * @param {number} chunks maximum number of lines per chunk of lines
+ * @param {number} maxlines maximum number of lines per iter.next()
  * @returns {AsyncIterableIterator<T[]>}
  * @example
  *
@@ -40,14 +40,14 @@ export async function * readlines<T>(filepath: string): AsyncIterableIterator<T>
  *     console.log(value); // value => Array<T>
  * }
  */
-export async function * readlinesChunk<T>(filepath: string, chunk: number) {
+export async function * readlinesChunk<T>(filepath: string, maxlines: number) {
     let lines: T[] = [];
     const iter = await readlines<T>(filepath);
     while (true) {
         const {value, done} = await iter.next();
         if (done) { break; }
         lines.push(value);
-        if (lines.length >= chunk) {
+        if (lines.length >= maxlines) {
             yield lines;
             lines = [];
         }

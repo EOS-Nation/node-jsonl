@@ -44,7 +44,7 @@ import * as jsonl from "node-jsonl";
 ### Read JSONL one line at a time
 
 ```ts
-const rl = jsonl.readlines<T>("example.json")
+const rl = jsonl.readlines<T>(filepath)
 
 while (true) {
     const {value, done} = await rl.next()
@@ -56,7 +56,7 @@ while (true) {
 ### Read JSONL multiple lines at a time
 
 ```ts
-const rl = jsonl.readlinesChunk<T>("example.jsonl", 2)
+const rl = jsonl.readlinesChunk<T>(filepath, maxlines)
 
 while (true) {
     const {value, done} = await rl.next()

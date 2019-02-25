@@ -9,9 +9,11 @@
     "index.d.ts"
   ],
   "author": {
-    "name": "EOS Nation",
+    "name": "Denis Carriere",
+    "email": "denis@eosnation.io",
     "url": "https://eosnation.io"
   },
+  "repository": "https://github.com/eos-nation/node-jsonl",
   "license": "MIT",
   "scripts": {
     "prepublishOnly": "tsc -d",
