@@ -1,0 +1,30 @@
+{
+  "name": "node-jsonl",
+  "version": "0.1.0",
+  "description": "NodeJS Iterate over JSONL",
+  "main": "index.js",
+  "types": "index.d.js",
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "author": {
+    "name": "EOS Nation",
+    "url": "https://eosnation.io"
+  },
+  "license": "MIT",
+  "scripts": {
+    "prepublishOnly": "tsc -d",
+    "test": "jest --coverage",
+    "posttest": "tslint -p ."
+  },
+  "devDependencies": {
+    "@types/jest": "*",
+    "@types/node": "*",
+    "jest": "*",
+    "ts-jest": "*",
+    "tslint": "*",
+    "typescript": "*"
+  },
+  "dependencies": {}
+}
